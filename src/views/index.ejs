@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"; xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>GetMyBookmark</title>
+</head>
+
+<body>
+  <h1>Welcome to GetMyBookmark!</h1>
+
+  <ul class="USER_DB">
+  <% for(var i=0; i<USER_DB.length; i++) {%>
+    <li class="USER_DB">
+      <span><%= USER_DB[i].username %></span>
+      <span><%= USER_DB[i].first %></span>
+      <span><%= USER_DB[i].last %></span>
+      <span><%= USER_DB[i].email %></span>
+      <span><%= USER_DB[i]._id %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <form action="/USER_DB" method="POST">
+    <input type="text" placeholder="username" name="username">
+    <input type="text" placeholder="first" name="first">
+    <input type="text" placeholder="last" name="last">
+    <input type="text" placeholder="email" name="email">
+    <!--input type="text" placeholder="userID" name="userID"--> <!-- system generated-->
+    <button type="submit">Submit</button>
+  </form>
+  
+</body>
+</html>
+
